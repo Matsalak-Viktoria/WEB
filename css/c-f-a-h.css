@@ -21,6 +21,9 @@ header{
     align-items: center;
     margin: 0px;
     padding: 0px;
+    /*margin-left: auto;
+    margin-right: auto;*/
+    box-shadow: 0 -15px 40px 0px rgba(0, 0, 1, 0.6);
 }
 
 .logo{
@@ -34,7 +37,7 @@ header{
 /*nav{
     display: flex;
     align-items: center;
-    margin-left: 16px;
+    justify-content: center;
 }*/
 
 ul
@@ -57,7 +60,7 @@ nav li a{
     text-decoration: none;
     color: rgb(69, 65, 62);
     transition: 0.6s;
-    padding: 0 10px;
+    margin: 0px 10px;
     text-align: center;
     vertical-align: middle;
     background: #ffffff;
@@ -125,25 +128,33 @@ main>div>img{
     width: 100%;
 }
 
-main
-{
-    background-image: url("image/100-1006329_horse-hd-wallpaper.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
+.horsecare{
+    width: 369px;
+    height: 281.35px;
+    margin: 0px 0px 25px 0px;
 }
 
-.info
-{
-    width: 320px;
-    height: 710.63px;
-    z-index: 1;
-    background-color: white;
-    opacity: 0.5;
+h2{
+    font-size: 48;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
-.background
+.horse-image
 {
-    position: absolute;
-    z-index: -1;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+article
+{
+    margin: 25px 10px 25px 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
