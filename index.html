@@ -6,16 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> Портал конного спорта - Все для всадников и лошадей - HorseHouseUA </title>
     <link rel="shortcut icon" href="image/ICON5.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@500&display=swap" 
+    rel="stylesheet">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/c-f-a-h.css">
     <link rel ="stylesheet" href = "css/style.css">
 </head>
 <body>
     <header>
-        <a href ="index.html" class="logo"><img src="image/Logo2.jpg" data-src="Logo2.jpg" 
+        <a href="index.html" class="logo scale-in-center"><img src="image/Logo2.jpg" data-src="Logo2.jpg"
         alt="Портал конного спорта"></a>
-        <nav>
+        <nav class="header-menu">
             <ul>
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="#">Конный спорт</a>
+                    <div class="arrow-dropmenu">
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M14.5858 9.99995H0V7.99995H14.5858L8.29289 1.70706L9.70711 0.292847L18.4142 8.99995L9.70711 17.7071L8.29289 16.2928L14.5858 9.99995Z"
+                                fill="black" />
+                        </svg>
+                    </div>
                     <ul class="dropmenu">
                         <li><a href="Horse-Riding-Tips.html" class="droplink">Советы всадникам</a></li>
                         <li><a href="Caring-for-a-horse.html" class="droplink">Забота о лошади</a></li>
@@ -26,6 +38,13 @@
                     </ul>
                 </li>
                 <li><a href="#">Конные клубы</a>
+                    <div class="arrow-dropmenu">
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M14.5858 9.99995H0V7.99995H14.5858L8.29289 1.70706L9.70711 0.292847L18.4142 8.99995L9.70711 17.7071L8.29289 16.2928L14.5858 9.99995Z"
+                                fill="black" />
+                        </svg>
+                    </div>
                     <ul class="dropmenu">
                         <li><a href="https://horseua.com/ru/category/konnie-clubi/konnie-clubi-kiev/" 
                         target="_blank" class="droplink">Киева</a></li>
@@ -40,12 +59,26 @@
                     </ul>
                 </li>
                 <li><a href="#">Календарь событий</a>
+                    <div class="arrow-dropmenu">
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M14.5858 9.99995H0V7.99995H14.5858L8.29289 1.70706L9.70711 0.292847L18.4142 8.99995L9.70711 17.7071L8.29289 16.2928L14.5858 9.99995Z"
+                                fill="black" />
+                        </svg>
+                    </div>
                     <ul class="dropmenu">
                         <li><a href="#" class="droplink">Соревнования(Укр.)</a></li>
                         <li><a href="#" class="droplink">Соревнования(Всем.)</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Медиа</a>
+                    <div class="arrow-dropmenu">
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M14.5858 9.99995H0V7.99995H14.5858L8.29289 1.70706L9.70711 0.292847L18.4142 8.99995L9.70711 17.7071L8.29289 16.2928L14.5858 9.99995Z"
+                                fill="black" />
+                        </svg>
+                    </div>
                     <ul class="dropmenu">
                         <li><a href="#" class="droplink">Новости</a></li>
                         <li><a href="#" class="droplink">Фото</a></li>
@@ -53,26 +86,111 @@
                     </ul>
                 </li>
                 <li><a href="#">Клиентам</a>
+                    <div class="arrow-dropmenu">
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M14.5858 9.99995H0V7.99995H14.5858L8.29289 1.70706L9.70711 0.292847L18.4142 8.99995L9.70711 17.7071L8.29289 16.2928L14.5858 9.99995Z"
+                                fill="black" />
+                        </svg>
+                    </div>
                     <ul class="dropmenu">
                         <li><a href="#" class="droplink">О нас</a></li>
                         <li><a href="#" class="droplink">Контакты</a></li>
                     </ul>
                 </li>
             </ul> 
-        </nav>                  
-        <aside>
-            <a href ="#"><img src="image/User.png" data-src="User.png" 
+        </nav>         
+        <div class="header-menu-close">
+            Закрыть
+        </div>         
+        <div class="header-action">
+            <a class="header-login" href ="#"><img src="image/User.png" data-src="User.png" 
             alt="Портал конного спорта"></a>
-            <a href ="#"><img src="image/Search.png" data-src="Search.png" 
+            <a class="header-search" href="#"><img src="image/Search.png" data-src="Search.png"
             alt="Портал конного спорта"></a>
-            <a href ="#"><img src="image/Triple_line.png" data-src="Triple_line.png" 
+            <a class="header-burger" href="#"><img src="image/Triple_line.png" data-src="Triple_line.png"
             alt="Портал конного спорта"></a>
-        </aside>     
+        </div>  
     </header>
     <main>
-        <div ><img class="background" src="image/100-1006329_horse-hd-wallpaper.jpg" 
-            alt="Портал конного спорта">
+        <div class="main-slider">
+            <!-- <div class="slide">
+                <div class="slide-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quaerat nobis iste, sed minima ipsam voluptatibus id quisquam deleniti expedita ullam inventore a consequuntur, aut quasi dolore similique minus vero.</div>
+                <a href="" class="btn-link">Link</a>
+            </div> -->
+            <div class="main-slider__item">
+                <div class="container">
+                    <h1 class="main-slider__item-title">Lorem, ipsum dolor.</h1>
+                </div>
+                <div class="main-slider__item-img">
+                    <img class="kenburns-top " src="./image/horse-2344193_1920.jpg" alt="image">
+                </div>
+            </div>
+            <div class="main-slider__item">
+                <div class="container">
+                    <h1 class="main-slider__item-title">Lorem, ipsum dolor Lorem, ipsum dolor.</h1>
+                </div>
+                <div class="main-slider__item-img">
+                    <img class="kenburns-top " src="./image/black-horse-3809167_1920.jpg" alt="image">
+                </div>
+            </div>
+            <div class="main-slider__item">
+                <div class="container">
+                    <h1 class="main-slider__item-title">Lorem, ipsum dolor Lorem, ipsum dolor.</h1>
+                </div>
+                <div class="main-slider__item-img">
+                    <img class="kenburns-top " src="./image/horse-4138721_1920.jpg" alt="image">
+                </div>
+            </div>
         </div>
-        <div class="info"></div> 
+
+        <div class= "footer-container">
+            <img class="footer-img" src="./image/1038649_horse-dark-animals-photo-backgrounds-hd-wallpapers_2000x1200_h.jpg" alt="image">
+        </div>
+
+
+        <!-- <div class="info"></div>  -->
     </main>
+    <div class="horse-image">
+        <article>
+            <img class="horsecare" src="image/Food_or_Foe_What_Do_Horses_Eat.jpg" alt="Правильное питание">
+            <a class="link-to-article" href="Proper-feeding.html">Правильное питание</a>
+        </article>
+        <article>
+            <img class="horsecare" src="image/Frenchtown,_NJ_State_Of_The_Art_Equestrian_Facility_located_wit.jpg"
+            <a class="link-to-article" href="#">Ссылка</a>
+        </article>
+        <article>
+            <img class="horsecare" src="image/Why You Only Need 4 Brushes To Groom Your Horse (1).jpg"
+                alt="Правильное питание">
+            <a class="link-to-article" href="#">Ссылка</a>
+        </article>
+        <article>
+            <img class="horsecare" src="image/10_Ideas_To_Rev-Up_Your_Fly_Control_For_Horses_Program.jpg"
+                alt="Правильное питание">
+            <a class="link-to-article" href="#">Ссылка</a>
+        </article>
+        <article>
+            <img class="horsecare" src="image/countrywisher.jpg" alt="Правильное питание">
+            <a class="link-to-article" href="#">Ссылка</a>
+        </article>
+        <article>
+            <img class="horsecare" src="image/What Does a Veterinarian Do_ (1).jpg" 
+                alt="Правильное питание">
+            <a class="link-to-article" href="#">Ссылка</a>
+        </article>
+    </div>
+    <a href="Caring-for-a-horse.html" class="horse-image-all">Все статьи</a>
+    <div class="modal-search">
+        <div class="modal">
+            <h2 class="modal-title">Что будем искать?</h2>
+            <form action="" class="modal-search-form">
+                <input type="text" placeholder="Поиск">
+            </form>
+        </div>
+        <div class="modal-close">Закрыть</div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="slick/slick.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
