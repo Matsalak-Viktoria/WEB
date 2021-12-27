@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> Портал конного спорта - Все для всадников и лошадей - HorseHouseUA </title>
     <link rel="shortcut icon" href="image/favicon.ico" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@500&display=swap" 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@500&display=swap"
     rel="stylesheet">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slick-theme.css">
@@ -29,7 +29,7 @@
                         </svg>
                     </div>
                     <ul class="dropmenu">
-                        <li><a href="article.html" class="droplink">Статьи</a></li>
+                        <li><a href="article.php" class="droplink">Статьи</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Конные клубы</a>
@@ -41,15 +41,15 @@
                         </svg>
                     </div>
                     <ul class="dropmenu">
-                        <li><a href="https://horseua.com/ru/category/konnie-clubi/konnie-clubi-kiev/" 
+                        <li><a href="https://horseua.com/ru/category/konnie-clubi/konnie-clubi-kiev/"
                         target="_blank" class="droplink">Киева</a></li>
-                        <li><a href="https://horseua.com/ru/category/konnie-clubi/konnie-clubi-lvov/" 
+                        <li><a href="https://horseua.com/ru/category/konnie-clubi/konnie-clubi-lvov/"
                         target="_blank" class="droplink">Львова</a></li>
-                        <li><a href="https://horseua.com/ru/category/konnie-clubi/konnit-cluby-odessa/" 
+                        <li><a href="https://horseua.com/ru/category/konnie-clubi/konnit-cluby-odessa/"
                         target="_blank" class="droplink">Одессы</a></li>
-                        <li><a href="https://horseua.com/ru/category/konnie-clubi/konnie-clubi-kharkov/" 
+                        <li><a href="https://horseua.com/ru/category/konnie-clubi/konnie-clubi-kharkov/"
                         target="_blank" class="droplink">Харькова</a></li>
-                        <li><a href="https://horseua.com/ru/category/konnie-clubi/konnie-clubi-dnepr/" 
+                        <li><a href="https://horseua.com/ru/category/konnie-clubi/konnie-clubi-dnepr/"
                         target="_blank" class="droplink">Днепра</a></li>
                     </ul>
                 </li>
@@ -74,9 +74,9 @@
                         </svg>
                     </div>
                     <ul class="dropmenu">
-                        <li><a href="news-inside.html" class="droplink">Новости</a></li>
-                        <li><a href="gallery.html" class="droplink">Галерея</a></li>
-                        <li><a href="news-inside-video.html" class="droplink">Видео</a></li>
+                        <li><a href="news-inside.php" class="droplink">Новости</a></li>
+                        <li><a href="gallery.php" class="droplink">Галерея</a></li>
+                        <li><a href="news-inside-video.php" class="droplink">Видео</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Клиентам</a>
@@ -92,19 +92,19 @@
                         <li><a href="contacts.html" class="droplink">Контакты</a></li>
                     </ul>
                 </li>
-            </ul> 
-        </nav>         
+            </ul>
+        </nav>
         <div class="header-menu-close">
             Закрыть
-        </div>         
+        </div>
         <div class="header-action">
-            <a class="header-login" href ="admin.html"><img src="image/User.png" data-src="User.png" 
+            <a class="header-login" href="admin.php"><img src="image/User.png" data-src="User.png"
             alt="Портал конного спорта"></a>
             <a class="header-search" href="#"><img src="image/Search.png" data-src="Search.png"
             alt="Портал конного спорта"></a>
             <a class="header-burger" href="#"><img src="image/Triple_line.png" data-src="Triple_line.png"
             alt="Портал конного спорта"></a>
-        </div>  
+        </div>
     </header>
     <main>
         <div class="main-slider">
@@ -144,7 +144,7 @@
     <div class="horsecare-article">
         <h2 class="title-sectinon">Статьи</h2>
         <hr size=3px width=100% align="center">
-        <a href="article.html" class="horse-image-all">Все статьи</a>
+        <a href="article.php" class="horse-image-all">Все статьи</a>
         <div class="horse-image">
             <article>
                 <img class="horsecare" src="image/Food_or_Foe_What_Do_Horses_Eat.jpg" alt="Правильное питание">
@@ -184,7 +184,7 @@
             <div class="registration-form__input">
                 <input type="email" name="user_email" placeholder="Введите адрес электронной почты" required>
             </div>
-            
+
             <div class="registration-form__input">
                 <input type="tel" name="user_phone" id="" placeholder="Номер" class="phone-mask">
             </div>
@@ -266,8 +266,9 @@
     <div class="modal-search">
         <div class="modal">
             <h2 class="modal-title">Что будем искать?</h2>
-            <form action="" class="modal-search-form">
-                <input type="text" placeholder="Поиск">
+            <form action="search.php" class="modal-search-form">
+                <input type="text" name="search" placeholder="Поиск">
+                <button type="submit"> Поиск </button>
             </form>
         </div>
         <div class="modal-close">Закрыть</div>

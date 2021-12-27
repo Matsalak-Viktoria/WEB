@@ -1,3 +1,10 @@
+<?php
+include('common/db_connect.php');
+
+$query = $connection->prepare('SELECT id, title, created_at, image from content where type = \'article\'');
+$query->execute();
+$result = $query->fetchAll();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -10,7 +17,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@500&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
   <link rel="stylesheet" href="css/slick.css">
   <link rel="stylesheet" href="css/slick-theme.css">
   <link rel="stylesheet" href="css/c-f-a-h.css">
@@ -113,66 +119,162 @@
     <div class="wrapper">
       <ul class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
-        <li class="breadcrumb-item active"><a href="">Контакты</a></li>
+        <li class="breadcrumb-item active"><a href="#">Статьи</a></li>
       </ul>
     </div>
   </nav>
-  <div class="contacts">
+  <div class="article">
     <div class="wrapper">
-      <h2 class="title-section">Контакты</h2>
-      <div class="contacts-wrap">
-        <div class="contacts-form">
-          <p class="title">Напишите нам:</p>
-          <form action="#">
-            <div class="form-input">
-              <label for="user_name">Имя*</label>
-              <input type="text" name="user_name" id="user_name" required>
-            </div>
-            <div class="form-input">
-              <label for="user_email">Ваш e-mail*</label>
-              <input type="email" name="user_email" id="user_email" required>
-            </div>
-            <div class="form-input">
-              <label for="user_phone">Телефон*</label>
-              <input type="tel" name="user_phone" id="user_phone" required>
-            </div>
-            <div class="form-input">
-              <label for="user_theme">Тема</label>
-              <input type="text" name="" id="user_theme">
-            </div>
-            <div class="form-textarea">
-               <label for="user_message">Сообщение*</label>
-              <textarea name="user_message" id="user_message" cols="30" rows="10" required></textarea>
-            </div>
-            <div class="form-checkbox">
-              <input type="checkbox" name="" id="contacts-form__checkbox">
-              <label for="contacts-form__checkbox">Отправляя это сообщение, вы даете согласие на обработку ваших
-                персональных данных командой проекта "Конный портал Украины"</label>
-            </div>
-            <p>* - поля, обязательные для заполнения.</p>
-            <button class="contacts-form__btn" type="submit" disabled>Отправить</button>
-          </form>
-        </div>
-        <div class="contacts-social">
-          <nav class="social-icons">
-            <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoicnUifQ%3D%3D%22%7D"
-              class="twitter-link">
-              <img class="" src="./image/twitter-icon.png" alt="icon">
-            </a>
-            <a href="https://m.facebook.com/login/?locale2=uk_UA" class="">
-              <img class="facebook" src="./image/facebook-icon.png" alt="icon">
-            </a>
-            <a href="https://myaccount.google.com/" class="">
-              <img class="" src="./image/telegram.png" alt="icon">
-            </a>
-          </nav>
-          <div class="contacts-links">
-            <div class="contacts-links__title">Телефон</div>
-            <a href="tel:+380737373726">+380737373726</a>
+      <h2 class="title-sectinon">Интересные статьи для всадников</h2>
+      <div class="article-wrap">
+        <div class="tabs">
+          <div class="tabs-head">
+            <div class="tabs-head__item active">Рубрики</div>
+            <div class="tabs-head__item">Конные клубы</div>
+            <div class="tabs-head__item">Новичкам</div>
+            <div class="tabs-head__item">Советы всадникам</div>
+            <div class="tabs-head__item">Конные клубы Киева</div>
           </div>
-          <div class="contacts-links">
-            <div class="contacts-links__title">Email</div>
-            <a href="mailto:example@email.com">example@email.com</a>
+          <div class="tabs-content">
+            <div class="tabs-content__block active">
+                <?php
+                foreach ($result as $item) {
+                ?>
+              <a href="article-page.php?id=<?php echo $item['id'] ?>" class="tabs-content__item">
+                <div class="tabs-content__item-img">
+                  <img src="/image/content-images/<?php echo basename($item['image'])?>" alt="image">
+                </div>
+                <h3 class="tabs-content__item-title">
+                  <?php echo htmlspecialchars_decode(stripslashes($item['title']))?>
+                </h3>
+                <div class="tabs-content__item-date"><?php echo (new DateTime($item['created_at']))->format('d.m.Y')?></div>
+              </a>
+                <?php }?>
+            </div>
+            <div class="tabs-content__block">
+              <a href="#" class="tabs-content__item">
+                <div class="tabs-content__item-img">
+                  <img src="https://horseua.com/wp-content/uploads/2021/09/alyr.jpg" alt="image">
+                </div>
+                <h3 class="tabs-content__item-title">
+                 Конно-спортивный клуб «Аллюр»
+                </h3>
+                <div class="tabs-content__item-date">22.09.2021</div>
+              </a>
+              <a href="#" class="tabs-content__item">
+                <div class="tabs-content__item-img">
+                  <img
+                    src="https://horseua.com/wp-content/uploads/2021/09/grand-prix.jpg"
+                    alt="image">
+                </div>
+                <h3 class="tabs-content__item-title">
+                  Конный клуб «Grand Prix»
+                </h3>
+                <div class="tabs-content__item-date">20.09.2021</div>
+              </a>
+              <a href="#" class="tabs-content__item">
+                <div class="tabs-content__item-img">
+                  <img
+                    src="https://horseua.com/wp-content/uploads/2021/09/impuls.jpg"
+                    alt="image">
+                </div>
+                <h3 class="tabs-content__item-title">
+                  Конно-спортивный клуб «Импульс»
+                </h3>
+                <div class="tabs-content__item-date">07.09.2021</div>
+              </a>
+            </div>
+            <div class="tabs-content__block">
+              <a href="#" class="tabs-content__item">
+                <div class="tabs-content__item-img">
+                  <img src="https://horseua.com/wp-content/uploads/2021/11/sorevnovania-666x540.jpg" alt="image">
+                </div>
+                <h3 class="tabs-content__item-title">
+                 Собираемся на конные соревнования: список обязательных аксессуаров для всадника
+                </h3>
+                <div class="tabs-content__item-date">29.11.2021</div>
+              </a>
+              <a href="#" class="tabs-content__item">
+                <div class="tabs-content__item-img">
+                  <img
+                    src="https://horseua.com/wp-content/uploads/2021/11/uhod-666x540.jpg"
+                    alt="image">
+                </div>
+                <h3 class="tabs-content__item-title">
+                  Лучшие средства для чистки вашей лошади
+                </h3>
+                <div class="tabs-content__item-date">17.11.2021</div>
+              </a>
+              <a href="#" class="tabs-content__item">
+                <div class="tabs-content__item-img">
+                  <img
+                    src="https://horseua.com/wp-content/uploads/2021/10/stremena-1-666x540.jpg"
+                    alt="image">
+                </div>
+                <h3 class="tabs-content__item-title">
+                  Подбираем стремена: виды, типы и отличия стремян для всадников
+                </h3>
+                <div class="tabs-content__item-date">01.10.2021</div>
+              </a>
+            </div>
+            <div class="tabs-content__block">
+              <a href="#" class="tabs-content__item">
+                <div class="tabs-content__item-img">
+                  <img src="https://horseua.com/wp-content/uploads/2021/12/sapogi-666x540.jpeg" alt="image">
+                </div>
+                <h3 class="tabs-content__item-title">
+                  Как ухаживать за ботинками и сапогами для верховой езды: советы и рекомендации
+                </h3>
+                <div class="tabs-content__item-date">10.12.2021</div>
+              </a>
+              <a href="#" class="tabs-content__item">
+                <div class="tabs-content__item-img">
+                  <img src="https://horseua.com/wp-content/uploads/2021/11/sorevnovania-666x540.jpg" alt="image">
+                </div>
+                <h3 class="tabs-content__item-title">
+                  Собираемся на конные соревнования: список обязательных аксессуаров для всадника
+                </h3>
+                <div class="tabs-content__item-date">29.11.2021</div>
+              </a>
+              <a href="#" class="tabs-content__item">
+                <div class="tabs-content__item-img">
+                  <img src="https://horseua.com/wp-content/uploads/2021/11/uhod-666x540.jpg" alt="image">
+                </div>
+                <h3 class="tabs-content__item-title">
+                  Лучшие средства для чистки вашей лошади
+                </h3>
+                <div class="tabs-content__item-date">17.11.2021</div>
+              </a>
+            </div>
+            <div class="tabs-content__block">
+              <a href="#" class="tabs-content__item">
+                <div class="tabs-content__item-img">
+                  <img src="https://horseua.com/wp-content/uploads/2020/12/kruglik.jpg" alt="image">
+                </div>
+                <h3 class="tabs-content__item-title">
+                  Конный клуб «Flying Horse Club»
+                </h3>
+                <div class="tabs-content__item-date">22.12.2020</div>
+              </a>
+              <a href="#" class="tabs-content__item">
+                <div class="tabs-content__item-img">
+                  <img src="https://horseua.com/wp-content/uploads/2020/12/olimp.jpg" alt="image">
+                </div>
+                <h3 class="tabs-content__item-title">
+                  Конно-спортивный клуб «Олимп»
+                </h3>
+                <div class="tabs-content__item-date">21.12.2020</div>
+              </a>
+              <a href="#" class="tabs-content__item">
+                <div class="tabs-content__item-img">
+                  <img src="https://horseua.com/wp-content/uploads/2020/12/balaton.jpg" alt="image">
+                </div>
+                <h3 class="tabs-content__item-title">
+                  Конно-спортивный клуб «Балатон»
+                </h3>
+                <div class="tabs-content__item-date">15.12.2020</div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -237,15 +339,14 @@
   <div class="modal-search">
     <div class="modal">
       <h2 class="modal-title">Что будем искать?</h2>
-      <form action="search.php" class="modal-search-form">
-        <input type="text" name="search" placeholder="Поиск">
-        <button type="submit"> Поиск </button>
-      </form>
+        <form action="search.php" class="modal-search-form">
+            <input type="text" name="search" placeholder="Поиск">
+            <button type="submit"> Поиск </button>
+        </form>
     </div>
     <div class="modal-close">Закрыть</div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
   <script src="js/jquery.maskedinput.min.js"></script>
   <script src="js/jquery.validate.min.js"></script>
   <script src="slick/slick.min.js"></script>

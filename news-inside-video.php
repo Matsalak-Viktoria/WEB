@@ -1,3 +1,12 @@
+<?php
+include('common/db_connect.php');
+
+$query = $connection->prepare('SELECT title, description, image from content where type = \'video\' limit 1');
+$query->execute();
+$result = $query->fetchAll();
+$data = $result[0];
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -113,68 +122,25 @@
     <div class="wrapper">
       <ul class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
-        <li class="breadcrumb-item active"><a href="">Контакты</a></li>
+        <li class="breadcrumb-item"><a href="news.html">Новости</a></li>
+        <li class="breadcrumb-item active"><a href="">Страница новостей</a></li>
       </ul>
     </div>
   </nav>
-  <div class="contacts">
+  <div class="content-page">
     <div class="wrapper">
-      <h2 class="title-section">Контакты</h2>
-      <div class="contacts-wrap">
-        <div class="contacts-form">
-          <p class="title">Напишите нам:</p>
-          <form action="#">
-            <div class="form-input">
-              <label for="user_name">Имя*</label>
-              <input type="text" name="user_name" id="user_name" required>
-            </div>
-            <div class="form-input">
-              <label for="user_email">Ваш e-mail*</label>
-              <input type="email" name="user_email" id="user_email" required>
-            </div>
-            <div class="form-input">
-              <label for="user_phone">Телефон*</label>
-              <input type="tel" name="user_phone" id="user_phone" required>
-            </div>
-            <div class="form-input">
-              <label for="user_theme">Тема</label>
-              <input type="text" name="" id="user_theme">
-            </div>
-            <div class="form-textarea">
-               <label for="user_message">Сообщение*</label>
-              <textarea name="user_message" id="user_message" cols="30" rows="10" required></textarea>
-            </div>
-            <div class="form-checkbox">
-              <input type="checkbox" name="" id="contacts-form__checkbox">
-              <label for="contacts-form__checkbox">Отправляя это сообщение, вы даете согласие на обработку ваших
-                персональных данных командой проекта "Конный портал Украины"</label>
-            </div>
-            <p>* - поля, обязательные для заполнения.</p>
-            <button class="contacts-form__btn" type="submit" disabled>Отправить</button>
-          </form>
-        </div>
-        <div class="contacts-social">
-          <nav class="social-icons">
-            <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoicnUifQ%3D%3D%22%7D"
-              class="twitter-link">
-              <img class="" src="./image/twitter-icon.png" alt="icon">
-            </a>
-            <a href="https://m.facebook.com/login/?locale2=uk_UA" class="">
-              <img class="facebook" src="./image/facebook-icon.png" alt="icon">
-            </a>
-            <a href="https://myaccount.google.com/" class="">
-              <img class="" src="./image/telegram.png" alt="icon">
-            </a>
-          </nav>
-          <div class="contacts-links">
-            <div class="contacts-links__title">Телефон</div>
-            <a href="tel:+380737373726">+380737373726</a>
-          </div>
-          <div class="contacts-links">
-            <div class="contacts-links__title">Email</div>
-            <a href="mailto:example@email.com">example@email.com</a>
-          </div>
-        </div>
+      <h2 class="title">
+          <?php echo htmlspecialchars_decode(stripslashes($data['title']))?>
+      </h2>
+      <a href="/image/content-images/<?php echo basename($data['image'])?>"
+        class="content-page__img" data-fancybox="content-foto">
+        <img src="/image/content-images/<?php echo basename($data['image'])?>" alt="image">
+      </a>
+      <div class="content-page__video">
+        <iframe width="100%" height="100%" src="<?php echo htmlspecialchars_decode(stripslashes($data['description']))?>" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -237,10 +203,10 @@
   <div class="modal-search">
     <div class="modal">
       <h2 class="modal-title">Что будем искать?</h2>
-      <form action="search.php" class="modal-search-form">
-        <input type="text" name="search" placeholder="Поиск">
-        <button type="submit"> Поиск </button>
-      </form>
+        <form action="search.php" class="modal-search-form">
+            <input type="text" name="search" placeholder="Поиск">
+            <button type="submit"> Поиск </button>
+        </form>
     </div>
     <div class="modal-close">Закрыть</div>
   </div>

@@ -33,7 +33,7 @@
             </svg>
           </div>
           <ul class="dropmenu">
-            <li><a href="article.html" class="droplink">Статьи</a></li>
+            <li><a href="article.php" class="droplink">Статьи</a></li>
           </ul>
         </li>
         <li><a href="#">Конные клубы</a>
@@ -78,9 +78,9 @@
             </svg>
           </div>
           <ul class="dropmenu">
-            <li><a href="news-inside.html" class="droplink">Новости</a></li>
-            <li><a href="gallery.html" class="droplink">Галерея</a></li>
-            <li><a href="news-inside-video.html" class="droplink">Видео</a></li>
+            <li><a href="news-inside.php" class="droplink">Новости</a></li>
+            <li><a href="gallery.php" class="droplink">Галерея</a></li>
+            <li><a href="news-inside-video.php" class="droplink">Видео</a></li>
           </ul>
         </li>
         <li><a href="#">Клиентам</a>
@@ -102,7 +102,7 @@
       Закрыть
     </div>
     <div class="header-action">
-      <a class="header-login" href="#"><img src="image/User.png" data-src="User.png" alt="Портал конного спорта"></a>
+      <a class="header-login" href="admin.php"><img src="image/User.png" data-src="User.png" alt="Портал конного спорта"></a>
       <a class="header-search" href="#"><img src="image/Search.png" data-src="Search.png"
           alt="Портал конного спорта"></a>
       <a class="header-burger" href="#"><img src="image/Triple_line.png" data-src="Triple_line.png"
@@ -198,8 +198,9 @@
   <div class="modal-search">
     <div class="modal">
       <h2 class="modal-title">Что будем искать?</h2>
-      <form action="" class="modal-search-form">
-        <input type="text" placeholder="Поиск">
+      <form action="search.php" class="modal-search-form">
+        <input type="text" name="search" placeholder="Поиск">
+        <button type="submit"> Поиск </button>
       </form>
     </div>
     <div class="modal-close">Закрыть</div>
