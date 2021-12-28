@@ -253,7 +253,9 @@ nav li a{
     height: 281.35px;
     margin: 0px 0px 25px 0px;
 }
-
+.horsecare img{
+    width: 100%;
+}
 h2{
     font-size: 48;
     /* font-family: sans-serif; */
@@ -285,4 +287,41 @@ article
 {
     text-decoration: none;
     color:rgb(69, 65, 62);
+}
+
+.horsecare-article{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.horsecare-article .slick-next{
+    width: 100px;
+    height: 100px;
+    background:url(../image/ArrowR.png) no-repeat;
+}
+
+.horsecare-article .slick-next::before{
+    display: none;
+    content:'';
+}
+
+.horsecare-article .slick-prev{
+    width: 100px;
+    height: 100px;
+    background:url(../image/ArrowL.png) no-repeat;
+    z-index: 3;
+}
+
+
+.horsecare-article .slick-prev::before{
+    display: none;
+    content:'';
+}
+
+@media(max-width:736px){
+    .horsecare{
+        width: 100%;
+        height: auto;
+    }
 }
